@@ -4,7 +4,6 @@ const ExpenseElement = ({ title, price, date }) => {
   const year = date.getFullYear();
   const month = date.toLocaleString("en-US", { month: "long" });
   const day = date.toLocaleString("en-US", { day: "2-digit" });
-  console.log("object");
   return (
     <div className="expense-item">
       <div className="expense-date">
