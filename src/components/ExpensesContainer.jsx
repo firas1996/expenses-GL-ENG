@@ -1,9 +1,11 @@
+import Chart from "./Chart";
 import ExpenseElement from "./ExpenseElement";
 import "./ExpensesContainer.css";
 
 const ExpensesContainer = ({ data }) => {
   return (
     <div className="expenses">
+      <Chart />
       {data.map((item) => {
         return (
           <ExpenseElement
