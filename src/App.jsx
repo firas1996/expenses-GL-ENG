@@ -1,5 +1,4 @@
-import ExpenseElement from "./components/ExpenseElement";
-import TestComp from "./components/TestComp";
+import ExpensesContainer from "./components/ExpensesContainer";
 
 function App() {
   const data = [
@@ -30,16 +29,7 @@ function App() {
   ];
   return (
     <>
-      {data.map((item) => {
-        return (
-          <ExpenseElement
-            key={item.id}
-            title={item.title}
-            price={item.price}
-            date={item.date}
-          />
-        );
-      })}
+      <ExpensesContainer data={data} />
     </>
   );
 }
