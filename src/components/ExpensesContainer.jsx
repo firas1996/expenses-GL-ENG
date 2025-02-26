@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Chart from "./Chart";
 import ExpenseElement from "./ExpenseElement";
 import "./ExpensesContainer.css";
@@ -8,12 +9,16 @@ const ExpensesContainer = ({ data }) => {
     "All",
     ...new Set(data.map((el) => el.date.getFullYear()).sort()),
   ];
-  console.log(years);
+  const [expenses, setExpenses] = useState(years[0]);
+  const x = data.filter((item) => {
+    return expenses == "All" ? true : item.date.getFullYear() == expenses;
+  });
+  console.log(x);
   return (
     <div className="expenses">
-      <Filter years={years} />
-      <Chart data={data} />
-      {data.map((item) => {
+      <Filter years={years} expenses={expenses} setExpenses={setExpenses} />
+      <Chart data={x} />
+      {x.map((item) => {
         return (
           <ExpenseElement
             key={item.id}
