@@ -1,12 +1,17 @@
 import "./Filter.css";
 
-const Filter = () => {
+const Filter = ({ years }) => {
   return (
     <div className="filter">
       <label>Filter By Year :</label>
       <select>
-        <option>2023</option>
-        <option>2024</option>
+        {years.map((item) => {
+          return (
+            <option key={item} value={item}>
+              {item}
+            </option>
+          );
+        })}
       </select>
     </div>
   );
