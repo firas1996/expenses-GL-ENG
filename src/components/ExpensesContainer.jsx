@@ -5,7 +5,7 @@ import "./ExpensesContainer.css";
 const ExpensesContainer = ({ data }) => {
   return (
     <div className="expenses">
-      <Chart />
+      <Chart data={data} />
       {data.map((item) => {
         return (
           <ExpenseElement
