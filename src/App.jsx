@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import AddExpenseForm from "./components/AddExpenseForm";
 import ExpensesContainer from "./components/ExpensesContainer";
 
 function App() {
-  const data = [
+  const oldData = [
     {
       id: 1,
       title: "New TV",
@@ -35,9 +35,13 @@ function App() {
       date: new Date("2027-02-25"),
     },
   ];
+  const [data, setData] = useState(oldData);
+  const getExpense = (newData) => {
+    console.log(newData);
+  };
   return (
     <>
-      <AddExpenseForm />
+      <AddExpenseForm getExpense={getExpense} nbr={data.length} />
       <ExpensesContainer data={data} />
     </>
   );
