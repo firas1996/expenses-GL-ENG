@@ -6,7 +6,6 @@ const AddExpenseForm = () => {
   const mindate = `${date - 2}-01-01`;
   const maxdate = `${date + 2}-12-31`;
   const [data, setData] = useState({ title: "", price: "", date: "" });
-
   const onChange = ({ target }) => {
     const { name, value } = target;
     setData({ ...data, [name]: value });
