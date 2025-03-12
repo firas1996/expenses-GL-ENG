@@ -37,7 +37,7 @@ function App() {
   ];
   const [data, setData] = useState(oldData);
   const getExpense = (newData) => {
-    console.log(newData);
+    setData([newData, ...data]);
   };
   return (
     <>
